@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEAN - Keep Every Asset Noticed</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Overlay and Modal -->
+    <div id="overlay" class="overlay"></div>
+    <div id="modal" class="modal">
+        <p class="modal-text">You haven't selected a profile picture. Do you want to proceed without one?</p>
+        <button id="yesButton" class="modal-button" aria-label="Proceed without profile picture">Yes</button>
+        <button id="noButton" class="modal-button" aria-label="Stay on registration form">No</button>
+    </div>
+
+    <!-- Main Content -->
+    <video autoplay loop muted class="background-video">
+        <source src="cyber-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="mainContent" class="container">
+        <!-- Login Section -->
+        <img src="logo.png" alt="KEAN Logo" class="floating-logo">
+        <p class="slogan">Keep Every Asset Noticed</p>
+
+        <!-- Login Form -->
+<div id="loginContainer" class="form-container">
+    <form id="loginForm" action="login.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required aria-label="Enter your username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required aria-label="Enter your password">
+
+        <button type="submit" class="login-button" aria-label="Login">Login</button>
+    </form>
+    
+    <!-- Forgot Email & Password Link -->
+    <div class="forgot-link">
+        <p><a href="forgot_password.html" id="forgotPasswordLink" aria-label="Recover your email and password">Forgot Your Password?</a></p>
+    </div>
+
+    <style>
+        .forgot-link {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.forgot-link a {
+    color: blue;
+    text-decoration: none;
+}
+
+.forgot-link a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+
+    <div class="register-link">
+        <p>Don't have an account? <a href="#" id="showRegisterLink" aria-label="Register for a new account">Register</a></p>
+    </div>
+</div>
+
+        <!-- Register Form -->
+        <div id="registerContainer" class="form-container" style="display: none;">
+            <div class="registration-header">Registration Form</div>
+
+            <form id="registerForm" action="register.php" method="POST" enctype="multipart/form-data">
+                <label for="registerUsername">Username:</label>
+                <input type="text" id="registerUsername" name="username" required aria-label="Enter your username">
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-label="Enter your email address">
+            
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="password" required aria-label="Enter your password">
+            
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required aria-label="Confirm your password">
+            
+                <!-- Error message placeholder -->
+                <p id="passwordError" class="error-message" style="display: none; color: red;">Passwords do not match!</p>
+            
+                <!-- Enlarged Profile Picture Section -->
+                <label for="profilePicture">Choose a Profile Picture:</label>
+                <div class="profile-picture-container">
+                    <img id="profilePreview" src="default-profile-pic.jpg" alt="Default Profile Picture">
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" onchange="previewImage(event)" aria-label="Upload a profile picture">
+                </div>
+            
+                <button type="submit" class="register-button" aria-label="Register">Register</button>
+            </form>            
+            <div class="register-link">
+                <p>Already have an account? <a href="#" id="showLoginLink" aria-label="Login to your account">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="indexjava.js"></script>
+</body>
+</html>

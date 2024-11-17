@@ -1,0 +1,141 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(0, 255, 255, 0.450);
+}
+
+.history-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid black;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* History Details */
+.history-details {
+    margin-bottom: 30px;
+}
+
+.history-details h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.history-item strong {
+    color: #333;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Balance & Salary Section */
+.balance-salary {
+    margin-top: 30px;
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+.balance-salary h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.balance-info p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .history-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .history-item {
+        font-size: 13px;
+    }
+
+    .balance-info p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .history-item {
+        font-size: 12px;
+    }
+
+    .balance-info p {
+        font-size: 14px;
+    }
+
+    .reset-balance-btn {
+        font-size: 14px;
+    }
+}

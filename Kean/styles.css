@@ -1,0 +1,285 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Adjusts width to fill the viewport */
+    height: 100vh; /* Adjusts height to fill the viewport */
+    object-fit: cover; /* Ensures the video covers the screen without stretching */
+    z-index: -1; /* Places the video behind the content */
+}
+
+.container {
+    text-align: center;
+    color: black;
+    z-index: 1;
+    padding: 20px; /* Adjust padding as needed */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Maximum width */
+    width: 90%; /* Responsive width */
+    max-height: 90vh; /* Max height to prevent overflow */
+    overflow-y: auto; /* Enable scrolling if content exceeds max height */
+    margin: 0 20px; /* Added margin to center the form */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align items horizontally */
+}
+
+.floating-logo {
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    text-align: left;
+    width: 100%; /* Full width for inputs */
+}
+
+.form-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+button.login-button {
+    background-color: black;
+    color: white;
+}
+
+button.login-button:hover {
+    opacity: 0.8;
+}
+
+button.register-button {
+    background-color: black; /* Black color for register button */
+    color: white;
+}
+
+button.register-button:hover {
+    opacity: 0.8; /* Hover effect similar to the login button */
+}
+
+.register-link a {
+    color: blue;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.profile-picture-container img {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.registration-header {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.success-container {
+    text-align: center;
+    color: #333; /* Darker text for contrast */
+    padding: 30px 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    border: 1px solid #ddd; /* Light border */
+    max-width: 600px;
+    margin: 20px;
+}
+
+.success-container h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.success-container p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.5; /* Improved readability */
+}
+
+.button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #000000; /* Black color */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333333; /* Darker shade of black or dark gray */
+    opacity: 0.9; /* Slight opacity change */
+}
+
+
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#yesButton {
+    background-color: #4CAF50;
+}
+
+#yesButton:hover {
+    background-color: #45a049;
+}
+
+#noButton {
+    background-color: #f44336;
+}
+
+#noButton:hover {
+    background-color: #e53935;
+}
+
+.modal-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        max-height: 80vh; /* Adjust max height for smaller screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .slogan {
+        font-size: 22px; /* Decrease font size for smaller screens */
+    }
+
+    .floating-logo {
+        width: 150px; /* Smaller logo for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%; /* Full width for mobile devices */
+        padding: 15px;
+    }
+
+    .slogan {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    .floating-logo {
+        width: 120px; /* Smaller logo for mobile */
+    }
+
+    button {
+        font-size: 14px; /* Smaller button text on mobile */
+    }
+}
+
+/* Error Message Style */
+.error-message {
+    display: none; /* Initially hidden */
+    color: red; 
+    margin-top: -13px; /* Closer to password fields */
+    margin-bottom: 20px; /* Space below the error message */
+}
+

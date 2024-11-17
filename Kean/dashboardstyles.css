@@ -1,0 +1,475 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 255, 255, 0.450);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid black;
+    overflow-x: auto;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Centering the clock */
+.clock {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center the content */
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-bottom: 15px; /* Space between image and username */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.user-name {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px; /* Space between username and profile picture */
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 75px;
+}
+
+.nav-link {
+    margin: 0 65px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Specific link colors */
+.nav-link.about,
+.nav-link.contact,
+.nav-link.logout {
+    color: black;
+}
+
+.nav-link:hover {
+    color: #000000;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* Default underline color */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: translateX(0);
+}
+
+/* Input Fields */
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 60px;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Notification Modal Styling */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+}
+
+/* Notification message */
+.notification-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Yes/No Buttons */
+#yes-btn, #no-btn {
+    margin: 0 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#yes-btn {
+    background-color: #4CAF50;
+}
+
+#no-btn {
+    background-color: red;
+}
+
+#yes-btn:hover {
+    background-color: #357a3a;
+}
+
+#no-btn:hover {
+    background-color: darkred;
+}
+
+/* Notification Styles */
+.paid-notification, .delete-notification {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* View History Link */
+.view-history {
+    margin-top: 20px;
+    text-align: right; /* Aligns the content to the right */
+    position: relative;
+}
+
+.link {
+    color: blue;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Action Icons */
+.icon {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    display: none;
+    margin-top: -10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .profile-picture {
+        width: 150px;
+        height: auto;
+        margin: 0;
+    }
+
+    .user-name {
+        font-size: 1.2em;
+        margin-top: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin: 10px 0;
+    }
+
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock {
+        font-size: 1.2em;
+    }
+
+    .user-name {
+        font-size: 0.9em;
+    }
+
+    input, .button {
+        font-size: 14px;
+    }
+    
+    table {
+        width: 100%; 
+        max-width: 100%;
+        overflow-x: auto; 
+        display: block; 
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .nav-links {
+        padding: 0;
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 15px; /* Adjust position for smaller screens */
+        right: 15px; /* Adjust position for smaller screens */
+    }
+
+    .toggle-label {
+        width: 60px; /* Reduce width for smaller screens */
+        height: 25px; /* Reduce height for smaller screens */
+    }
+
+    .toggle-ball {
+        width: 25px; /* Reduce size of the toggle ball */
+        height: 25px; /* Reduce size of the toggle ball */
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        top: 10px; /* Further adjust position for the smallest screens */
+        right: 10px; /* Further adjust position for the smallest screens */
+    }
+
+    .toggle-label {
+        width: 50px; /* Further reduce width */
+        height: 20px; /* Further reduce height */
+    }
+
+    .toggle-ball {
+        width: 20px; /* Further reduce size of the toggle ball */
+        height: 20px; /* Further reduce size of the toggle ball */
+    }
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid rgba(0, 255, 255, 0.450);
+    border-radius: 50px;
+    padding: 5px;
+    background-color: white;
+    width: 70px;
+    height: 30px;
+    position: relative;
+}
+
+.toggle-ball {
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    transition: transform 1s ease, background 1s ease;
+    position: absolute;
+    top: 50%;
+    left: 5px;   
+    transform: translateY(-50%);
+}
+
+/* Hide the checkbox */
+#theme-switch {
+    display: none; 
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+body.dark-mode .dashboard-container {
+    background: #333;
+    border: 3px solid #444;
+}
+
+body.dark-mode .toggle-ball {
+    background: white;
+}
+
+body.dark-mode .nav-link::after {
+    background-color: white; /* Keep this for dark mode */
+}
+
+body.dark-mode .nav-link:hover::after {
+    background-color: white; /* Keep this for hover in dark mode */
+}
+
+body.dark-mode input {
+    background: #555;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark-mode .button {
+    background-color: #444;
+}
+
+body.dark-mode .button:hover {
+    background-color: #666;
+}
+
+body.dark-mode th {
+    background-color: #444;
+}
+
+body.dark-mode .notification {
+    background-color: #444;
+    color: white;
+}
+
+/* Transition for the toggle ball */
+#theme-switch:checked + .toggle-label .toggle-ball {
+    transform: translate(39px, -50%);
+}
+
+#theme-switch:checked + .toggle-label {
+    background-color: #444;
+}
+
+body.dark-mode .dashboard-container,
+body.dark-mode .dashboard-container * {
+    color: white; 
+}
+
+body.dark-mode .edit-button,
+body.dark-mode .save-button,
+body.dark-mode .cancel-button,
+body.dark-mode .delete-button,
+body.dark-mode .paid-button {
+    color: black;
+}
